@@ -1,0 +1,12 @@
+[package]
+# the binary name lives only here: change `name` to rename the tool
+name = "smart-optimizer"
+version = "0.1.0"
+edition = "2021"
+description = "Free disk space at the least expected loss; report RAM, swap and VRAM. One binary, no config, no daemon."
+
+[dependencies]
+libc = "0.2"
+
+[profile.release]
+opt-level = 3
