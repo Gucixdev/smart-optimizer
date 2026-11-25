@@ -70,7 +70,7 @@ Done:
 - [x] Rust port (`rust/`), held to the same AMPL optimum and the same tests as Go
 - [x] `mem`: read-only report of RAM, swap, zram, VRAM
 - [x] Discovery by standard, not by program name: XDG cache, FHS `/var/cache` (needs root, reported), freedesktop trash of the home and of every mount; big folders cut into children; `where`
-- [x] `--apply` tested: the deletion code is `reclaim::apply_items`, covered by Rust tests on fake homes, and the real binary was run with `--apply` (answering `n`, then `y`) on a fake home under `/var/tmp/so-test` with `HOME` and `XDG_CACHE_HOME` pointing there; right items removed, `.trashinfo` removed with its file, protected items stayed. Bug found on the way and fixed: a browser mark matched by substring protected pacman's `ca-certificates-mozilla-*.pkg.tar.zst` while Firefox ran (and hid it from the needs-root sum); marks now match whole path components
+- [x] `--apply` tested: the deletion code is `reclaim::apply_items`, covered by Rust tests on fake homes, and the real binary was run with `--apply` (answering `n`, then `y`) on a fake home in a temp folder with `HOME` and `XDG_CACHE_HOME` pointing there; right items removed, `.trashinfo` removed with its file, protected items stayed. Bug found on the way and fixed: a browser mark matched by substring protected pacman's `ca-certificates-mozilla-*.pkg.tar.zst` while Firefox ran (and hid it from the needs-root sum); marks now match whole path components
 - [x] `check [--below 15%]` (exit 0/3), installed to `~/.local/bin/smart-optimizer` on this machine; run for real read-only against the real disk (exit 3 at 15%: 14% free)
 
 Not done (each is a real gap, nothing here is checked):
